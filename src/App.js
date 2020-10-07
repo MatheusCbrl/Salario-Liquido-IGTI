@@ -116,7 +116,7 @@ export default class App extends Component {
                 <label className={'teal-text '}>Outros Descontos</label>
                 <input
                   type="text"
-                  className="validate"
+                  className="validates"
                   onChange={this.handleInputChange}
                   value={outrosDescontos}
                 />
