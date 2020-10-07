@@ -34,7 +34,7 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
-    } = calculateSalaryFrom(salarioBruto,outrosDescontos);
+    } = calculateSalaryFrom(salarioBruto);
 
     this.setState({
       salarioBruto,
@@ -43,7 +43,6 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
-      outrosDescontos,
     });
   };
   render() {
@@ -54,7 +53,6 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
-      outrosDescontos,
     } = this.state;
 
     const salarioLiquidoPercent = formatPercent(netSalary / salarioBruto);
@@ -111,18 +109,7 @@ export default class App extends Component {
                 >
                   {formatReal(discountIRPF)}
                 </InputReadOnly>
-              </div>
-              <div className="col l12 s12">
-                <label className={'teal-text '}>Outros Descontos</label>
-                <input
-                  type="text"
-                  className="validates"
-                  onChange={this.handleInputChange}
-                  value={outrosDescontos}
-                />
-              </div>      
-
-                   
+              </div>        
               <div className="col s6 m4 l3">
                 <InputReadOnly
                   label={'Salário líquido:'}
@@ -135,7 +122,6 @@ export default class App extends Component {
             </div>
           </div>
         </div>
-
         <Bar percents={{ inssPercent, irpfPercent }} />
       </div>
     );
