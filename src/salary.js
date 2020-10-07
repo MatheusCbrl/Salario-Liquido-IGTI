@@ -85,14 +85,14 @@ function calculateDiscountIRPF(baseIRPF) {
   return discountIRPF;
 }
 
-function calculateSalaryFrom(fullSalary) {
+function calculateSalaryFrom(fullSalary,outrosDescontos ) {
   const baseINSS = fullSalary;
   const discountINSS = calculateDiscountINSS(baseINSS);
 
   const baseIRPF = baseINSS - discountINSS;
   const discountIRPF = calculateDiscountIRPF(baseIRPF);
-  const outrosDescontos = outrosDescontos;
-  const netSalary = baseINSS - discountINSS - discountIRPF - outrosDescontos;
+  const discountoutrosDescontos = outrosDescontos;
+  const netSalary = baseINSS - discountINSS - discountIRPF - discountoutrosDescontos;
 
   return {
     baseINSS,
@@ -100,7 +100,7 @@ function calculateSalaryFrom(fullSalary) {
     baseIRPF,
     discountIRPF,
     netSalary,
-    outrosDescontos,
+    discountoutrosDescontos,
   };
 }
 
