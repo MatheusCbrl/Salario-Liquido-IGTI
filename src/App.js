@@ -17,6 +17,7 @@ export default class App extends Component {
       baseIRPF: 0,
       discountIRPF: 0,
       netSalary: 0,
+      outrosDescontos: 0,
     };
   }
 
@@ -25,6 +26,7 @@ export default class App extends Component {
   }
   handleInputChange = (e) => {
     const salarioBruto = e.target.value;
+    const outrosDescontos = e.target.value;
 
     const {
       baseINSS,
@@ -32,6 +34,7 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
+      outrosDescontos,
     } = calculateSalaryFrom(salarioBruto);
 
     this.setState({
@@ -41,6 +44,7 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
+      outrosDescontos,
     });
   };
   render() {
@@ -108,7 +112,17 @@ export default class App extends Component {
                   {formatReal(discountIRPF)}
                 </InputReadOnly>
               </div>
+              <div className="col l12 s12">
+                <label className={'teal-text '}>Outros Descontos</label>
+                <input
+                  type="text"
+                  className="validate"
+                  onChange={this.handleInputChange}
+                  value={outrosDescontos}
+                />
+              </div>      
 
+                   
               <div className="col s6 m4 l3">
                 <InputReadOnly
                   label={'Salário líquido:'}
