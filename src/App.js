@@ -54,6 +54,7 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
+      outrosDescontos,
     } = this.state;
 
     const salarioLiquidoPercent = formatPercent(netSalary / salarioBruto);
