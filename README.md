@@ -1,9 +1,4 @@
 ## Check-Out the final code
-
-This project was hosted with Netlify [Designed App](https://salario-liquido.netlify.app).
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/32b57101-a055-42d4-9830-e8deb29d4d3f/deploy-status)](https://app.netlify.com/sites/salario-liquido/deploys)
-
 ##------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
