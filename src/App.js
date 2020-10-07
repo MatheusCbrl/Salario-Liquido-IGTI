@@ -34,7 +34,6 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
-      outrosDescontos,
     } = calculateSalaryFrom(salarioBruto);
 
     this.setState({
